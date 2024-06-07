@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import connectDB from './db';
 
 import userRoutes from './routes/api/users';
+import patientsRoutes from './routes/api/patients';
 /*
 import nutritionistRoutes from './routes/api/nutritionists';
 import retailRoutes from './routes/api/retail';
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/patients', patientsRoutes);
 /*
 app.use('/api/nutritionists', nutritionistRoutes);
 app.use('/api/retail', retailRoutes);
