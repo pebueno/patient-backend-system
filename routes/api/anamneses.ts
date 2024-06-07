@@ -1,10 +1,11 @@
 import express, { Request, Response } from 'express';
 import Anamnesis from '../../models/Anamnesis';
+import auth from '../../middleware/auth';
 
 const router = express.Router();
 
 // Register Anamnesis
-router.post('/register', async (req: Request, res: Response) => {
+router.post('/register', auth, async (req: Request, res: Response) => {
   const { patientId, dailyHabits, pathologies, assessments } = req.body;
 
   try {

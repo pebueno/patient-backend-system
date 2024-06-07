@@ -1,10 +1,11 @@
 import express, { Request, Response } from 'express';
 import Patient from '../../models/Patient';
+import auth from '../../middleware/auth';
 
 const router = express.Router();
 
 // Register a new patient
-router.post('/register', async (req: Request, res: Response) => {
+router.post('/register', auth, async (req: Request, res: Response) => {
   const { email, name, dateOfBirth, gender, phone, maritalStatus, profession, cpf, address, appSettings } = req.body;
 
   try {
@@ -37,7 +38,7 @@ router.post('/register', async (req: Request, res: Response) => {
 });
 
 // Fetch patients by name, CPF, or email
-router.get('/:identifier?', async (req: Request, res: Response) => {
+router.get('/:identifier?', auth, async (req: Request, res: Response) => {
   const identifier = req.params.identifier;
 
   try {
