@@ -5,10 +5,10 @@ import connectDB from './db';
 
 import userRoutes from './routes/api/users';
 import patientsRoutes from './routes/api/patients';
+import anamnesesRoutes from './routes/api/anamneses';
 /*
 import nutritionistRoutes from './routes/api/nutritionists';
 import retailRoutes from './routes/api/retail';
-import anamnesesRoutes from './routes/api/anamneses';
 import anthropometryRoutes from './routes/api/anthropometry';
 */
 const app = express();
@@ -24,10 +24,10 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/patients', patientsRoutes);
+app.use('/api/anamneses', anamnesesRoutes);
 /*
 app.use('/api/nutritionists', nutritionistRoutes);
 app.use('/api/retail', retailRoutes);
-app.use('/api/anamneses', anamnesesRoutes);
 app.use('/api/anthropometry', anthropometryRoutes);
 */
 
